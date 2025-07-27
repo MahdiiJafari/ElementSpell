@@ -86,3 +86,32 @@ function findElementsForWord(word) {
   }
   return found;
 }
+
+function displayElements(elements) {
+  elements.forEach((item) => {
+    const elementBox = document.createElement("div");
+
+    if (item.type === "space") {
+      elementBox.className = "element-box space";
+      elementBox.innerHTML = "&nbsp;";
+    } else if (item.type === "text") {
+      elementBox.className = "element-box text";
+      elementBox.innerHTML = `<span class="element-sign">${item.symbol}</span>`;
+    } else {
+      elementBox.className = "element-box";
+      elementBox.innerHTML = `
+        <span class="atomic-number">${item.number}</span>
+        <span class="element-sign">${item.symbol}</span>
+        <span class="element-name">${item.name}</span>
+        <span class="atomic-weight">${item.atomicMass?.toFixed(3) || ""}</span>
+      `;
+    }
+
+    resultBox.appendChild(elementBox);
+  });
+}
+
+inputBtn.addEventListener("click", spellIt);
+inputText.addEventListener("keypress", (e) => {
+  if (e.key === "Enter") spellIt();
+});
