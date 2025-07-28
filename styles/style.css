@@ -181,7 +181,7 @@ footer a {
 .element-box {
   border: 3px solid var(--color-primary);
   width: 80px;
-  height: 90px;
+  height: 100px;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -223,9 +223,13 @@ footer a {
 
 .element-sign {
   width: 80px;
-  height: 45px;
+  height: 50px;
   text-align: center;
   font-weight: 600;
   font-size: 53px;
   line-height: 1;
+}
+
+.element-box.text span{
+  margin-top: 10px;
 }
