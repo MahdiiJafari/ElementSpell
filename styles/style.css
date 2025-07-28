@@ -107,6 +107,10 @@ a img {
 .input::placeholder {
   color: var(--color-gray);
 }
+
+.input:focus {
+  background: var(--color-light);
+}
 .btn {
   border-radius: 6px;
   border: 2px solid var(--color-primary);
@@ -140,11 +144,19 @@ footer a {
   display: flex;
   justify-content: center;
   align-items: center;
+  flex-direction: column;
 }
 
+.error p {
+  padding: 2rem;
+  font-size: 1.5rem;
+  color: #ff004c;
+  font-weight: 400;
+}
 .result {
   display: flex;
   gap: 10px;
+  padding-top: 2rem;
 }
 
 .element-box {
