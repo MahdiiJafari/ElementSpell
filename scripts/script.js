@@ -28,7 +28,9 @@ function spellIt() {
   const inputWord = inputText.value.trim();
 
   if (!inputWord) {
-    resultBox.innerHTML = "<p>Please enter a word to spell</p>";
+    resultBox.innerHTML = `<div class="error">
+        <p>Please enter a word to spell</p>
+      </div>`;
     return;
   }
 
