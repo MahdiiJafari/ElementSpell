@@ -35,8 +35,10 @@ function spellIt() {
   const foundElements = findElementsForWord(inputWord.toLowerCase());
 
   if (foundElements.some((item) => item.type === "text")) {
-    resultBox.innerHTML =
-      "<p>Could not spell the entire word with elements</p>";
+    const errorDiv = document.createElement("div");
+    errorDiv.className = "error";
+    errorDiv.innerHTML = "<p>Could not spell the entire word with elements</p>";
+    resultBox.appendChild(errorDiv);
     displayElements(foundElements);
   } else if (foundElements.length === 0) {
     resultBox.innerHTML = "<p>No matching elements found</p>";
@@ -88,6 +90,9 @@ function findElementsForWord(word) {
 }
 
 function displayElements(elements) {
+  const container = document.createElement("div");
+  container.className = "elements-container";
+
   elements.forEach((item) => {
     const elementBox = document.createElement("div");
 
@@ -107,10 +112,11 @@ function displayElements(elements) {
       `;
     }
 
-    resultBox.appendChild(elementBox);
+    container.appendChild(elementBox);
   });
-}
 
+  resultBox.appendChild(container);
+}
 inputBtn.addEventListener("click", spellIt);
 inputText.addEventListener("keypress", (e) => {
   if (e.key === "Enter") spellIt();

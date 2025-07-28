@@ -111,6 +111,7 @@ a img {
 .input:focus {
   background: var(--color-light);
 }
+
 .btn {
   border-radius: 6px;
   border: 2px solid var(--color-primary);
@@ -147,16 +148,34 @@ footer a {
   flex-direction: column;
 }
 
+.error {
+  width: 100%;
+  text-align: center;
+  margin-bottom: 1rem;
+}
+
 .error p {
-  padding: 2rem;
+  padding: 1rem;
   font-size: 1.5rem;
   color: #ff004c;
   font-weight: 400;
+  background-color: rgba(255, 0, 76, 0.1);
+  border-radius: 4px;
 }
+
 .result {
   display: flex;
+  flex-direction: column;
   gap: 10px;
   padding-top: 2rem;
+  align-items: center;
+}
+
+.elements-container {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+  justify-content: center;
 }
 
 .element-box {
@@ -172,6 +191,7 @@ footer a {
   border: 0;
   width: 40px;
 }
+
 .atomic-number,
 .element-name,
 .atomic-mass {
