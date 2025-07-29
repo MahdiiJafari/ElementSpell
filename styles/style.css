@@ -56,7 +56,6 @@ a img {
   list-style: none;
   width: auto;
   display: flex;
-  gap: 2rem;
   max-height: 100%;
 }
 
@@ -77,7 +76,6 @@ a img {
 }
 
 .main-header {
-  height: 100px;
   font-size: 2.5rem;
   font-weight: 600;
   text-align: center;
@@ -234,4 +232,31 @@ footer a {
 
 .element-box.text span {
   margin-top: 10px;
+}
+
+@media (max-width: 600px) {
+  a img {
+    height: 25px;
+  }
+  .nav-item {
+    font-size: 1rem;
+  }
+
+  .main-header {
+    font-size: 1.5rem;
+  }
+  footer {
+    font-size: 1rem;
+  }
+
+  .btn {
+    font-size: 1.2rem;
+    padding: 0.5rem;
+  }
+  .input-section {
+    height: 45px;
+  }
+  .input {
+    font-size: 1.5rem;
+  }
 }
